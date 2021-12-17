@@ -33,7 +33,7 @@ function NewEmployee(props) {
           </div>
 
           <div class="form-group">
-            <button>Save</button>
+            <button className = "createButton">Create</button>
           </div>
         </form>
             <Link to = {"/update"}>Already have a profile? Click Here!</Link>
