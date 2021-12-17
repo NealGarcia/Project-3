@@ -8,6 +8,9 @@ function NewEmployee(props) {
 
       <div className="formContainer">
         <form className="newEmployeeForm">
+        <Link to={"/"} id="return">
+          <p class="return">Go Back</p>
+        </Link>
           <h3>Create a New Profile</h3>
           <div class="form-group">
             <input placeholder="Name" class="input-control" />

@@ -1,10 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom"
 
 function UpdateEmployee(props) {
   return (
     <div className="component">
       <div className="formContainer">
         <form className="newEmployeeForm">
+        <Link to={"/new"} id="return">
+          <p class="return">Go Back</p>
+        </Link>
           <h3>Update Your Profile</h3>
           <div class="form-group">
             <input placeholder="Name" class="input-control" />
