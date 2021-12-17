@@ -9,18 +9,16 @@ function UpdateEmployee(props) {
         <Link to={"/new"} id="return">
           <p class="return">Go Back</p>
         </Link>
-          <h3>Update Your Profile</h3>
+          <h2>Update Your Profile</h2>
+          <h3>Personal Information</h3>
           <div class="form-group">
-            <input placeholder="Name" class="input-control" />
-            <input placeholder="Age" class="input-control" />
+            <input placeholder="Name:" class="input-control" />
+            <input placeholder="Age:" class="input-control" />
           </div>
 
           <div class="form-group">
-            <textarea
-              rows="6"
-              class="input-control"
-              placeholder="Description"
-            ></textarea>
+
+            <input placeholder="Profile Image URL:" class="input-control"></input>
           </div>
 
           <div class="form-group">
@@ -33,12 +31,44 @@ function UpdateEmployee(props) {
             <input class="input-control" placeholder="ZIP" />
           </div>
 
-          <div class="form-group">
-            <button component = "hideButton">Hide Profile</button>
-        </div>
-        <div>
-            <button component = "saveButton">Save Changes</button>
-            <button component = "deleteButton">Delete Profile</button>
+            <h3>Work History</h3>
+            <div class="form-group">
+            <input class="input-control" placeholder="Job Title" />
+            <input class="input-control" placeholder="Company" />
+          </div>
+
+            <h3>Contact Info</h3>
+            <div class="form-group">
+            <input class="input-control" placeholder="Phone Number" />
+            <input class="input-control" placeholder="Email Address" />
+          </div>
+
+            <h3>Availability</h3>
+            <p>Choose the days you are available:</p>
+            <div class = "checkboxes">
+                <label for="mon">Mon.</label>
+                <input type="checkbox" id="mon" name="mon"/>
+
+                <label for="tues">Tues.</label>
+                <input type="checkbox" id="tues" name="tues"/>
+
+                <label for="wed">Wed.</label>
+                <input type="checkbox" id="wed" name="wed"/>
+
+                <label for="thu">Thu.</label>
+                <input type="checkbox" id="thu" name="thu"/>
+
+                <label for="fri">Fri.</label>
+                <input type="checkbox" id="fri" name="fri"/>
+
+                <label for="sat">Sat.</label>
+                <input type="checkbox" id="sat" name="sat"/>
+
+                <label for="sun">Sun.</label>
+                <input type="checkbox" id="sun" name="sun"/>
+            </div>
+          <div class="checkboxes">
+            <button className = "createButton">Create</button>
           </div>
         </form>
       </div>
