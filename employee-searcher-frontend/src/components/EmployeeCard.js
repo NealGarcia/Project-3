@@ -1,12 +1,23 @@
-import React from 'react';
+import React from "react";
+import { useEffect } from "react";
 
 function EmployeeCard(props) {
-    return (
-        <div className="component">
-            <img src="https://www.zynga.com/storage/2020/02/tracey-thomas-bio.jpg" alt="woman"></img>
-            employee info here 
-        </div>
-    );
+    useEffect(()=>{console.log(props.employee)},[null,props.employee])
+    console.log(props.employee)
+  return (
+    <div>
+      <div className="card-image">
+        <img
+          src={props.employee.img.url}
+          alt={props.employee.img.title}
+          width="100px"
+        />
+      </div>
+      <div className="card-title">
+        <h3>{props.employee.name}</h3>
+      </div>
+    </div>
+  );
 }
 
 export default EmployeeCard;
