@@ -24,28 +24,14 @@ function Results(props) {
       Results populate here:
       <br />
       <section  id="card-container">
-        <div className="component">
-          <img
-            src="https://www.zynga.com/storage/2020/02/tracey-thomas-bio.jpg"
-            alt="woman"
-            width="100px"
-          ></img>
-          <div>employee info here </div>
-        </div>
         {employees.map((employee) => {
           return (
             <div className="component">
-              <div className="card-image">
-                <img src={employee.img.url} alt={employee.img.title} width='100px' />
-              </div>
-              <div className="card-title">
-                <h3>{employee.name}</h3>
-              </div>
+              <EmployeeCard employee={employee}/>
             </div>
           );
         })}
       </section>
-      <EmployeeCard />
     </div>
   );
 }
