@@ -5,7 +5,7 @@ import EmployeeCard from "./EmployeeCard";
 function Results(props) {
   const [employees, setEmployees] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:8000/") //<-- the url as a string
+    fetch("http://localhost:8000/api/") //<-- the url as a string
       // Wait for the response and convert it to json
       .then((res) => res.json())
       // Take the json and do something with it
@@ -26,7 +26,7 @@ function Results(props) {
       <section  id="card-container">
         {employees.map((employee) => {
           return (
-            <div className="component">
+            <div className="component card">
               <EmployeeCard employee={employee}/>
             </div>
           );
