@@ -50,7 +50,7 @@
   justify-content: space-evenly;
 }
 
-/* ---------- New Employee Component Start --------- */
+/* ---------- New / Update Employee Component Start Styling --------- */
 .formContainer{
   margin: auto;
   margin-top: 20px;
@@ -113,3 +113,9 @@ button {
     padding-left: 0;   
   }
 }
+
+#return {
+  float: left;
+  margin-top: -40px;
+}
+/* ----------- New / Update Employee Component End Styling ------------ */
