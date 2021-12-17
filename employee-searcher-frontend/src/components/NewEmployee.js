@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+ 
 import React from "react";
 
 function NewEmployee(props) {
@@ -34,7 +36,7 @@ function NewEmployee(props) {
             <button>Save</button>
           </div>
         </form>
-            <a href = "#"> Already have a profile? Click Here!</a>
+            <Link to = {"/update"}>Already have a profile? Click Here!</Link>
         </div>
     </div>
   );
