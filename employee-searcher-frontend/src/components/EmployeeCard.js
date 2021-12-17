@@ -1,9 +1,9 @@
 import React from "react";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 function EmployeeCard(props) {
-    useEffect(()=>{console.log(props.employee)},[null,props.employee])
-    console.log(props.employee)
+    // useEffect(()=>{console.log(props.employee)},[null,props.employee])
+    // console.log(props.employee)
   return (
     <div>
       <div className="card-image">
