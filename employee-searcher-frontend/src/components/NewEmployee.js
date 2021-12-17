@@ -1,23 +1,41 @@
-import React from 'react';
+import React from "react";
 
 function NewEmployee(props) {
-    return (
-        <div className="component">
-            Create New Profile
-            <div className = "profileContainer">
-                <form className = "newEmployeeForm">
-                    <input type = "text" placeholder = "Name"  id = "inputName"/>
-                    <input type = "text" placeholder = "Price" id = "inputPrice"/>
-                    <input type = "text" placeholder = "Description" id = "inputDescription"/> 
-                    <input type = "text" placeholder = "City" id = "cityInput"/>
-                    <input type = "text" placeholder = "State" id = "stateInput" />
-                    <input type = "text" placeholder = "Email Address" id = "emailInput" />
-                    <input type = "text" placeholder = "Phone Number" id = "phoneInput" />
-                    <input type = "submit" value = "Create Profile"/>
-                </form>
-            </div>
-        </div>
-    );
+  return (
+    <div className="component">
+      <div className="formContainer">
+        <form className="newEmployeeForm">
+          <h3>Create a New Profile</h3>
+          <div class="form-group">
+            <input placeholder="First Name" class="input-control" />
+            <input placeholder="Last Name" class="input-control" />
+          </div>
+
+          <div class="form-group">
+            <textarea
+              rows="6"
+              class="input-control"
+              placeholder="Description"
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <input placeholder="Address" class="input-control" />
+          </div>
+
+          <div class="form-group">
+            <input placeholder="City" class="input-control" />
+            <input class="input-control" placeholder="State" />
+            <input class="input-control" placeholder="ZIP" />
+          </div>
+
+          <div class="form-group">
+            <button>Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
 }
 
 export default NewEmployee;
