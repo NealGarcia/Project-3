@@ -68,7 +68,9 @@ function UpdateEmployee(props) {
                 <input type="checkbox" id="sun" name="sun"/>
             </div>
           <div class="checkboxes">
-            <button className = "createButton">Create</button>
+            <button className = "hideButton">Hide Profile</button>
+            <button className = "updateButton">Update</button>
+            <button className = "deleteButton">Delete Profile</button>
           </div>
         </form>
       </div>

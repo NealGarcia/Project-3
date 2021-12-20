@@ -12,7 +12,6 @@ function SearchBar(props) {
         event.preventDefault();
         console.log(search)
     }
-
     
     return (
         <div className='component'>

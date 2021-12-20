@@ -5,8 +5,10 @@ import Splash from "./components/Splash";
 import NewEmployee from "./components/NewEmployee";
 import UpdateEmployee from "./components/UpdateEmployee"
 import EmployerHome from "./components/EmployerHome";
+import Details from "./components/Details";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+
 
 function App() {
   return (
@@ -16,6 +18,7 @@ function App() {
       <Route path="/new" exact component={NewEmployee} />
       <Route path="/update" exact component={UpdateEmployee} />
       <Route path="/search" exact component={EmployerHome} />
+      <Route path="/details" exact component={Details} />
       <Footer />
     </div>
   );
