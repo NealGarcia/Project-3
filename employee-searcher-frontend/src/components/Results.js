@@ -5,7 +5,7 @@ import EmployeeCard from "./EmployeeCard";
 function Results(props) {
   const [employees, setEmployees] = useState([]);
   useEffect(() => {
-    fetch("https://backend-api-employees.herokuapp.com/") //<-- the url as a string
+    fetch("https://backend-api-employees.herokuapp.com/api/") //<-- the url as a string
       // Wait for the response and convert it to json
       .then((res) => res.json())
       // Take the json and do something with it
@@ -13,7 +13,7 @@ function Results(props) {
         setEmployees(json);
         // the json parameter holds the json data
         // so here's where you will need to
-        // use the setBirds method put the json into state
+        // use the setEmployees method put the json into state
       })
       // Catch and log any errors to the console
       .catch(console.error);

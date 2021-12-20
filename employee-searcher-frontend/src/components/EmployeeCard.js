@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 // import { useEffect } from "react";
 
 function EmployeeCard(props) {
@@ -6,16 +7,18 @@ function EmployeeCard(props) {
     // console.log(props.employee)
   return (
     <div>
-      <div className="card-image">
-        <img
-          src={props.employee.img.url}
-          alt={props.employee.img.title}
-          width="100px"
-        />
-      </div>
-      <div className="card-title">
-        <h3>{props.employee.name}</h3>
-      </div>
+      <Link to = '/details'>
+        <div className="card-image">
+          <img
+            src={props.employee.img.url}
+            alt={props.employee.img.title}
+            width="100px"
+          />
+        </div>
+        <div className="card-title">
+          <h3>{props.employee.name}</h3>
+        </div>
+      </Link>
     </div>
   );
 }
