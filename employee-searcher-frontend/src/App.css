@@ -46,6 +46,7 @@
   border-radius: 10%;
 }
 #card-container{
+  margin-left: 200px;
   display: flex;
  flex-wrap: wrap;
  justify-content: space-around;
@@ -126,3 +127,14 @@ button {
 }
 
 /* ----------- New / Update Employee Component End Styling ------------ */
+
+/* -------------------- Search Bar Styling ---------------------------- */
+.sideBar {
+  float: left;
+  height: 100%;
+  width: 200px;
+  margin-top: 40px;
+  /* position: fixed; */
+  top: 0;
+  left: 0;
+}

@@ -1,40 +1,37 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import EmployeeCard from "./EmployeeCard";
+import { SearchContext } from './EmployerHome'
 
-function Results(props) {
-  const [employees, setEmployees] = useState([]);
+function Results({employees}) {
+  const search = useContext(SearchContext)
+  // const [employees, setEmployees] = useState([]);
 
-  const url = `https://backend-api-employees.herokuapp.com/api/`
-  console.log(url)
-  useEffect(() => {
-    fetch(url) //<-- the url as a string
-      // Wait for the response and convert it to json
-      .then((res) => res.json())
-      // Take the json and do something with it
-      .then((json) => {
-        setEmployees(json);
-        // the json parameter holds the json data
-        // so here's where you will need to
-        // use the setEmployees method put the json into state
-      })
-      // Catch and log any errors to the console
-      .catch(console.error);
-  }, []);
+
+  // function getResults() {
+  //   const url = `http://localhost:8000/api/search/?name=&age=&location=&state=&city=&rating=`
+  //   fetch(url)
+  //     .then((res) => res.json())
+  //     .then((json) => {
+  //       setEmployees(json);
+  //     })
+  //     .catch(console.error);
+  // }
+  // useEffect(() => {
+  //   getResults()
+  // }, []);
 
   return (
     <div className="component">
       Results populate here:
       <br />
       <section  id="card-container">
-        {employees.map((employee) => {
-          return (
+        {employees.map((employee) => 
             <div className="component card">
               <EmployeeCard
                 employee={employee}/>
             </div>
-          );
-        })}
+        )}
       </section>
     </div>
   );
