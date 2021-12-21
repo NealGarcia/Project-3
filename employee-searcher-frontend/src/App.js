@@ -8,8 +8,7 @@ import EmployerHome from "./components/EmployerHome";
 import Details from "./components/Details";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-
-
+//hello
 function App() {
   
   return (

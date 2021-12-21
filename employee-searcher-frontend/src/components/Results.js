@@ -33,6 +33,7 @@ function Results({employees}) {
             </div>
         )}
       </section>
+
     </div>
   );
 }

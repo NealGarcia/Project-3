@@ -1,3 +1,6 @@
+git subtree push --prefix employee-searcher-frontend heroku master
+git subtree push --prefix employee-searcher-frontend heroku juliana:master
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
