@@ -41,6 +41,13 @@
   margin:5px;
   text-align: center;
 }
+.employer-splash{
+  min-height: 85vh;
+}
+.result{
+  min-width: 76vw;
+  min-height: 80vh;
+}
 .card{
   width: 15vw;
   border-radius: 10%;
