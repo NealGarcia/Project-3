@@ -43,7 +43,7 @@ function EmployerHome(props) {
   
       
     return (
-        <div className="component">
+        <div className="component employer-splash">
             Employer lands here
             <div className='employerHome'>
             <SearchBar
