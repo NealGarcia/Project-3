@@ -6,8 +6,6 @@ import { SearchContext } from './EmployerHome'
 function EmployeeCard(props) {
     // useEffect(()=>{console.log(props.employee)},[null,props.employee])
   const search = useContext(SearchContext)
-  console.log(props.employee)
-  console.log(search + " in employee card")
 
   return (
       <Link to ={
