@@ -45,6 +45,7 @@ function EmployerHome(props) {
     return (
         <div className="component">
             Employer lands here
+            <div className='employerHome'>
             <SearchBar
                 handleChange = {handleChange}
                 handleSubmit = {handleSubmit}
@@ -53,6 +54,7 @@ function EmployerHome(props) {
             <SearchContext.Provider value={search}>
                 <Results employees = {employees}/>
             </SearchContext.Provider>
+            </div>
         </div>
     );
 }

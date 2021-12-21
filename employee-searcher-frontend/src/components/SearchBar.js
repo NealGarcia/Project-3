@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 
 function SearchBar({ handleSubmit, handleChange, search }) {
     return (
-        <div className='sideBar'>
-            <form className = "searchForm" onSubmit = {handleSubmit}>
+        // <div className='sideBar'>
+            <form className = "searchForm sideBar component" onSubmit = {handleSubmit}>
                 <p>Search</p>
                 <input 
                     placeholder='Name'
@@ -55,7 +55,7 @@ function SearchBar({ handleSubmit, handleChange, search }) {
                  />
                 <button type = "submit">search</button>
             </form>
-        </div>
+        // </div>
     );
 }
 

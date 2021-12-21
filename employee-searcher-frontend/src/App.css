@@ -46,10 +46,9 @@
   border-radius: 10%;
 }
 #card-container{
-  margin-left: 200px;
-  display: flex;
- flex-wrap: wrap;
- justify-content: space-around;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
 }
 .card-link {
   display: flex;
@@ -63,6 +62,10 @@ img {
   object-fit: cover;
   border-top-left-radius: 7%;
   border-top-right-radius: 7%;
+}
+.employerHome{
+ display: flex;
+ flex-direction: row;
 }
 
 /* ---------- New / Update Employee Component Start Styling --------- */
