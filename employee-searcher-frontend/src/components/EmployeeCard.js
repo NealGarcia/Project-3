@@ -10,25 +10,24 @@ function EmployeeCard(props) {
   console.log(search + " in employee card")
 
   return (
-    <div>
       <Link to ={
           {
             pathname: "/details",
             state: search
           }
-      }>
+      } className="card-link">
         <div className="card-image">
           <img
             src={props.employee.img.url}
             alt={props.employee.img.title}
-            width="100px"
+            width="100%"
+            className="image"
           />
         </div>
         <div className="card-title">
           <h3>{props.employee.name}</h3>
         </div>
       </Link>
-    </div>
   );
 }
 
