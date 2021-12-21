@@ -22,10 +22,10 @@ function Results({employees}) {
   // }, []);
 
   return (
-    <div className="component">
+    <div className="component result">
       Results populate here:
       <br />
-      <section  id="card-container">
+      <section id="card-container">
         {employees.map((employee) => 
             <div className="component card">
               <EmployeeCard
