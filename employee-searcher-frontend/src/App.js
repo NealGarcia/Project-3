@@ -1,6 +1,6 @@
 import "./App.css";
 import { Route } from "react-router-dom";
-// import { useEffect } from "react";
+// import { useState, useEffect } from "react";
 import Splash from "./components/Splash";
 import NewEmployee from "./components/NewEmployee";
 import UpdateEmployee from "./components/UpdateEmployee"
@@ -11,14 +11,17 @@ import Footer from "./components/Footer";
 
 
 function App() {
+  
   return (
     <div className="App component">
       <Header />
       <Route path="/" exact component={Splash} />
       <Route path="/new" exact component={NewEmployee} />
       <Route path="/update" exact component={UpdateEmployee} />
-      <Route path="/search" exact component={EmployerHome} />
-      <Route path="/details" exact component={Details} />
+      <Route path="/search" 
+        exact component={EmployerHome}
+        />
+      <Route path="/details/" component={Details} />
       <Footer />
     </div>
   );

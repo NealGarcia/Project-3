@@ -4,8 +4,11 @@ import EmployeeCard from "./EmployeeCard";
 
 function Results(props) {
   const [employees, setEmployees] = useState([]);
+
+  const url = `https://backend-api-employees.herokuapp.com/api/`
+  console.log(url)
   useEffect(() => {
-    fetch("https://backend-api-employees.herokuapp.com/api/") //<-- the url as a string
+    fetch(url) //<-- the url as a string
       // Wait for the response and convert it to json
       .then((res) => res.json())
       // Take the json and do something with it
@@ -27,7 +30,8 @@ function Results(props) {
         {employees.map((employee) => {
           return (
             <div className="component card">
-              <EmployeeCard employee={employee}/>
+              <EmployeeCard
+                employee={employee}/>
             </div>
           );
         })}

@@ -1,18 +1,6 @@
 import React from 'react';
-import { useState } from 'react'; 
 
-function SearchBar(props) {
-    const [search, setSearch] = useState("")
-
-    function handleChange(event) {
-        setSearch(event.target.value)
-    }
-
-    function handleSubmit(event) {
-        event.preventDefault();
-        console.log(search)
-    }
-    
+function SearchBar({ handleSubmit, handleChange }) {
     return (
         <div className='component'>
             <form className = "searchForm" onSubmit = {handleSubmit}>

@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 // import { useEffect } from "react";
+import { SearchContext } from './EmployerHome'
 
 function EmployeeCard(props) {
     // useEffect(()=>{console.log(props.employee)},[null,props.employee])
-    // console.log(props.employee)
+  const search = useContext(SearchContext)
+  console.log(props.employee)
+  console.log(search + " in employee card")
+
   return (
     <div>
-      <Link to = '/details'>
+      <Link to ={
+          {
+            pathname: "/details",
+            state: search
+          }
+      }>
         <div className="card-image">
           <img
             src={props.employee.img.url}
