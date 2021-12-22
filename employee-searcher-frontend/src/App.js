@@ -8,6 +8,7 @@ import EmployerHome from "./components/EmployerHome";
 import Details from "./components/Details";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import EmployeeLogin from "./components/EmployeeLogin";
 //hello
 function App() {
   
@@ -16,7 +17,8 @@ function App() {
       <Header />
       <Route path="/" exact component={Splash} />
       <Route path="/new" exact component={NewEmployee} />
-      <Route path="/update" exact component={UpdateEmployee} />
+      <Route path="/update" exact component={EmployeeLogin} />
+      <Route path="/update/:user" exact component={UpdateEmployee} />
       <Route path="/search" 
         exact component={EmployerHome}
         />
