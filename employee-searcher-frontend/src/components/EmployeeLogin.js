@@ -18,7 +18,7 @@ function EmployeeLogin(props) {
     <div>
       <h3>add your unique ID here!</h3>
       <input placeholder="id here" onChange={handleChange}></input>
-      <Link to={`/update/${user}`} /* user={user} */>
+      <Link to={`/update/${user}`}>
         <button onSubmit={handleSubmit}>Find my profile!</button>
       </Link>
     </div>

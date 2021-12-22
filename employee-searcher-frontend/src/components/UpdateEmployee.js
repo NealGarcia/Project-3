@@ -4,13 +4,11 @@ import { useState } from "react";
 import { useEffect } from "react/cjs/react.development";
 
 function UpdateEmployee(props) {
-  const [updateEmployee, setUpdateEmployee] = useState({});
-console.log(props.match.params.user)
-/*   useEffect(
-  fetch(`http://localhost:8000/api/employee/${props.match.params.user}`)
-) */
+  const [updateEmployee, setUpdateEmployee] = useState(props.employee)
+const url = `http://localhost:8000/api/employee/${props.user}`
+console.log(props.user)
 
-  async function call(url = "", data = {}) {
+ async function call(url = ``, data = {}) {
     const options = {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
@@ -21,20 +19,19 @@ console.log(props.match.params.user)
       .then((res) => res.json())
       .then((json) => {
         setUpdateEmployee(json);
-        console.log("Success:", updateEmployee);
-      });
+      })
+      .then(console.log("Success:", updateEmployee));
+    
   }
+ 
   function handleSubmit(e) {
     e.preventDefault();
-    const url = `http://localhost:8000/api/employee/${props.match.params.user}`
     console.log(url)
-    call(url, updateEmployee).then((emp) =>
-      console.log(emp)
-    );
+    call(url, updateEmployee).then(console.log(updateEmployee));
   }
   function handleChange(e) {
     setUpdateEmployee({ ...updateEmployee, [e.target.id]: e.target.value });
-    console.log(updateEmployee);
+    console.log(e.target.id)
   }
   return (
     <div className="component">
@@ -47,59 +44,59 @@ console.log(props.match.params.user)
           <h3>Personal Information</h3>
           <div className="form-group">
             <input id="name" value={updateEmployee.name} placeholder="Name:" className="input-control" onChange={handleChange}/>
-            <input placeholder="Age:" className="input-control" />
+            <input onChange={handleChange} id="age" placeholder="Age:" className="input-control" />
           </div>
 
           <div className="form-group">
 
-            <input placeholder="Profile Image URL:" className="input-control"></input>
+            <input id="img.url" placeholder="Profile Image URL:" className="input-control"onChange={handleChange}></input>
           </div>
 
           <div className="form-group">
-            <input placeholder="Address" className="input-control" />
+            <input id="address" placeholder="Address" className="input-control" onChange={handleChange}/>
           </div>
 
           <div className="form-group">
-            <input placeholder="City" className="input-control" />
-            <input className="input-control" placeholder="State" />
-            <input className="input-control" placeholder="ZIP" />
+            <input onChange={handleChange} id="city" placeholder="City" className="input-control" />
+            <input onChange={handleChange} id="state" className="input-control" placeholder="State" />
+            <input onChange={handleChange} id="zip" className="input-control" placeholder="ZIP" />
           </div>
 
             <h3>Work History</h3>
             <div className="form-group">
-            <input className="input-control" placeholder="Job Title" />
-            <input className="input-control" placeholder="Company" />
+            <input onChange={handleChange} id="title" className="input-control" placeholder="Job Title" />
+            <input onChange={handleChange} id="company" className="input-control" placeholder="Company" />
           </div>
 
             <h3>Contact Info</h3>
             <div className="form-group">
-            <input className="input-control" placeholder="Phone Number" />
-            <input className="input-control" placeholder="Email Address" />
+            <input onChange={handleChange} id="phone" className="input-control" placeholder="Phone Number" />
+            <input onChange={handleChange} id="email" className="input-control" placeholder="Email Address" />
           </div>
 
             <h3>Availability</h3>
             <p>Choose the days you are available:</p>
             <div className = "checkboxes">
                 <label htmlFor="mon">Mon.</label>
-                <input type="checkbox" id="mon" name="mon"/>
+                <input onChange={handleChange} type="checkbox" id="mon" name="mon"/>
 
                 <label htmlFor="tues">Tues.</label>
-                <input type="checkbox" id="tues" name="tues"/>
+                <input onChange={handleChange} type="checkbox" id="tue" name="tues"/>
 
                 <label htmlFor="wed">Wed.</label>
-                <input type="checkbox" id="wed" name="wed"/>
+                <input onChange={handleChange} type="checkbox" id="wed" name="wed"/>
 
                 <label htmlFor="thu">Thu.</label>
-                <input type="checkbox" id="thu" name="thu"/>
+                <input onChange={handleChange} type="checkbox" id="thu" name="thu"/>
 
                 <label htmlFor="fri">Fri.</label>
-                <input type="checkbox" id="fri" name="fri"/>
+                <input onChange={handleChange} type="checkbox" id="fri" name="fri"/>
 
                 <label htmlFor="sat">Sat.</label>
-                <input type="checkbox" id="sat" name="sat"/>
+                <input onChange={handleChange} type="checkbox" id="sat" name="sat"/>
 
                 <label htmlFor="sun">Sun.</label>
-                <input type="checkbox" id="sun" name="sun"/>
+                <input onChange={handleChange} type="checkbox" id="sun" name="sun"/>
             </div>
           <div className="checkboxes">
             <button className = "hideButton">Hide Profile</button>
