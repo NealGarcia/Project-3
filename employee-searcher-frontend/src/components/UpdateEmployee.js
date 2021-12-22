@@ -5,47 +5,47 @@ function UpdateEmployee(props) {
   return (
     <div className="component">
       <div className="formContainer">
-        <form className="newEmployeeForm">
+        <form className="newEmployeeForm" onSubmit={handleSubmit}>
         <Link to={"/new"} id="return">
-          <p class="return">Go Back</p>
+          <p className="return">Go Back</p>
         </Link>
           <h2>Update Your Profile</h2>
           <h3>Personal Information</h3>
-          <div class="form-group">
-            <input placeholder="Name:" class="input-control" />
-            <input placeholder="Age:" class="input-control" />
+          <div className="form-group">
+            <input placeholder="Name:" className="input-control" />
+            <input placeholder="Age:" className="input-control" />
           </div>
 
-          <div class="form-group">
+          <div className="form-group">
 
-            <input placeholder="Profile Image URL:" class="input-control"></input>
+            <input placeholder="Profile Image URL:" className="input-control"></input>
           </div>
 
-          <div class="form-group">
-            <input placeholder="Address" class="input-control" />
+          <div className="form-group">
+            <input placeholder="Address" className="input-control" />
           </div>
 
-          <div class="form-group">
-            <input placeholder="City" class="input-control" />
-            <input class="input-control" placeholder="State" />
-            <input class="input-control" placeholder="ZIP" />
+          <div className="form-group">
+            <input placeholder="City" className="input-control" />
+            <input className="input-control" placeholder="State" />
+            <input className="input-control" placeholder="ZIP" />
           </div>
 
             <h3>Work History</h3>
-            <div class="form-group">
-            <input class="input-control" placeholder="Job Title" />
-            <input class="input-control" placeholder="Company" />
+            <div className="form-group">
+            <input className="input-control" placeholder="Job Title" />
+            <input className="input-control" placeholder="Company" />
           </div>
 
             <h3>Contact Info</h3>
-            <div class="form-group">
-            <input class="input-control" placeholder="Phone Number" />
-            <input class="input-control" placeholder="Email Address" />
+            <div className="form-group">
+            <input className="input-control" placeholder="Phone Number" />
+            <input className="input-control" placeholder="Email Address" />
           </div>
 
             <h3>Availability</h3>
             <p>Choose the days you are available:</p>
-            <div class = "checkboxes">
+            <div className = "checkboxes">
                 <label for="mon">Mon.</label>
                 <input type="checkbox" id="mon" name="mon"/>
 
