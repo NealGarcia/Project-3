@@ -3,9 +3,7 @@ import { useEffect, useState } from "react";
 import React from "react";
 
 function NewEmployee(props) {
-   const [newEmployee, setNewEmployee] = useState({});
-  // const [name, setName] = useState(undefined);
-
+  const [newEmployee, setNewEmployee] = useState({});
 
   async function call(url = "", data = {}) {
     const options = {
@@ -17,21 +15,22 @@ function NewEmployee(props) {
     const Employee = await fetch(url, options)
       .then((res) => res.json())
       .then((json) => {
-        setNewEmployee(json)
+        setNewEmployee(json);
         console.log("Success:", newEmployee);
       });
-    }
-  console.log( newEmployee)
-
+  }
+  console.log(newEmployee);
 
   function handleChange(e) {
-    setNewEmployee({...newEmployee,[e.target.id]:e.target.value});
-    console.log(newEmployee)
+    setNewEmployee({ ...newEmployee, [e.target.id]: e.target.value });
+    console.log(newEmployee);
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-    call('http://localhost:8000/api/', newEmployee).then((emp) => console.log(emp))
+    call("http://localhost:8000/api/", newEmployee).then((emp) =>
+      console.log(emp)
+    );
   }
   return (
     <div className="component">
@@ -68,6 +67,7 @@ function NewEmployee(props) {
               className="input-control"
               name="image[url]"
               id="url"
+              onChange={handleChange}
             ></input>
           </div>
 
@@ -80,9 +80,24 @@ function NewEmployee(props) {
           </div>
 
           <div className="form-group">
-            <input placeholder="City" className="input-control" id="city" />
-            <input className="input-control" placeholder="State" id="state" />
-            <input className="input-control" placeholder="ZIP" id="zip" />
+            <input
+              placeholder="City"
+              className="input-control"
+              id="city"
+              onChange={handleChange}
+            />
+            <input
+              className="input-control"
+              placeholder="State"
+              id="state"
+              onChange={handleChange}
+            />
+            <input
+              className="input-control"
+              placeholder="ZIP"
+              id="zip"
+              onChange={handleChange}
+            />
           </div>
 
           <h3>Work History</h3>
@@ -91,11 +106,13 @@ function NewEmployee(props) {
               className="input-control"
               placeholder="Job Title"
               id="title"
+              onChange={handleChange}
             />
             <input
               className="input-control"
               placeholder="Company"
               id="company"
+              onChange={handleChange}
             />
           </div>
 
@@ -105,11 +122,13 @@ function NewEmployee(props) {
               className="input-control"
               placeholder="Phone Number"
               id="phone"
+              onChange={handleChange}
             />
             <input
               className="input-control"
               placeholder="Email Address"
               id="email"
+              onChange={handleChange}
             />
           </div>
 
@@ -117,25 +136,60 @@ function NewEmployee(props) {
           <p>Choose the days you are available:</p>
           <div className="checkboxes">
             <label htmlFor="mon">Mon.</label>
-            <input type="checkbox" id="mon" name="mon" />
+            <input
+              type="checkbox"
+              id="mon"
+              name="mon"
+              onChange={handleChange}
+            />
 
             <label htmlFor="tues">Tues.</label>
-            <input type="checkbox" id="tues" name="tues" />
+            <input
+              type="checkbox"
+              id="tues"
+              name="tues"
+              onChange={handleChange}
+            />
 
             <label htmlFor="wed">Wed.</label>
-            <input type="checkbox" id="wed" name="wed" />
+            <input
+              type="checkbox"
+              id="wed"
+              name="wed"
+              onChange={handleChange}
+            />
 
             <label htmlFor="thu">Thu.</label>
-            <input type="checkbox" id="thu" name="thu" />
+            <input
+              type="checkbox"
+              id="thu"
+              name="thu"
+              onChange={handleChange}
+            />
 
             <label htmlFor="fri">Fri.</label>
-            <input type="checkbox" id="fri" name="fri" />
+            <input
+              type="checkbox"
+              id="fri"
+              name="fri"
+              onChange={handleChange}
+            />
 
             <label htmlFor="sat">Sat.</label>
-            <input type="checkbox" id="sat" name="sat" />
+            <input
+              type="checkbox"
+              id="sat"
+              name="sat"
+              onChange={handleChange}
+            />
 
             <label htmlFor="sun">Sun.</label>
-            <input type="checkbox" id="sun" name="sun" />
+            <input
+              type="checkbox"
+              id="sun"
+              name="sun"
+              onChange={handleChange}
+            />
           </div>
           <div className="checkboxes">
             <button className="createButton">Create</button>
