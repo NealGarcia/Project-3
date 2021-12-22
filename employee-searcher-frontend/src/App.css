@@ -13,10 +13,38 @@
   color: white;
 }
 
+.header{
+  margin: 5px;
+  text-align: center;
+}
+
 .component {
   border:5px solid darkolivegreen;
   margin:5px;
   text-align: center;
+}
+
+#splash{
+  min-height: 81vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#splash button{
+  width: 25vw;
+  height: 15vh;
+  border-radius: 45%;
+  font-size: 25px;
+}
+#buttons{
+  display: flex;
+  width: 60%;
+  justify-content: space-evenly;
+}
+#formPage{
+  min-height: 81vh;
 }
 .employer-splash{
   min-height: 85vh;

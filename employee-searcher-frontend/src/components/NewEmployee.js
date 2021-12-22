@@ -33,7 +33,7 @@ function NewEmployee(props) {
     );
   }
   return (
-    <div className="component">
+    <div className="component" id="formPage">
       <div className="formContainer">
         <form className="newEmployeeForm" onSubmit={handleSubmit}>
           <Link to={"/"} id="return">
@@ -135,61 +135,62 @@ function NewEmployee(props) {
           <h3>Availability</h3>
           <p>Choose the days you are available:</p>
           <div className="checkboxes">
-            <label htmlFor="mon">Mon.</label>
             <input
               type="checkbox"
               id="mon"
               name="mon"
               onChange={handleChange}
             />
+            <label htmlFor="mon">Mon.</label>
 
-            <label htmlFor="tues">Tues.</label>
             <input
               type="checkbox"
               id="tues"
               name="tues"
               onChange={handleChange}
             />
+            <label htmlFor="tues">Tues.</label>
 
-            <label htmlFor="wed">Wed.</label>
             <input
               type="checkbox"
               id="wed"
               name="wed"
               onChange={handleChange}
             />
+            <label htmlFor="wed">Wed.</label>
 
-            <label htmlFor="thu">Thu.</label>
             <input
               type="checkbox"
               id="thu"
               name="thu"
               onChange={handleChange}
             />
+            <label htmlFor="thu">Thu.</label>
 
-            <label htmlFor="fri">Fri.</label>
             <input
               type="checkbox"
               id="fri"
               name="fri"
               onChange={handleChange}
             />
+            <label htmlFor="fri">Fri.</label>
 
-            <label htmlFor="sat">Sat.</label>
             <input
               type="checkbox"
               id="sat"
               name="sat"
               onChange={handleChange}
             />
+            <label htmlFor="sat">Sat.</label>
+            
 
-            <label htmlFor="sun">Sun.</label>
             <input
               type="checkbox"
               id="sun"
               name="sun"
               onChange={handleChange}
             />
+            <label htmlFor="sun">Sun.</label>
           </div>
           <div className="checkboxes">
             <button className="createButton">Create</button>

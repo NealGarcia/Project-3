@@ -16,8 +16,7 @@ function Splash(props) {
   if (employeeShow === false && employerShow === false ) {
     return (
       <div className="component" id="splash">
-        SPLASH PAGE!
-        <div>
+        <div id="buttons">
           <Link to={"/search"}>
             <button onClick={handleEmployer}>Employer</button>
           </Link>
