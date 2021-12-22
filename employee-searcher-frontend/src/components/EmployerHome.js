@@ -27,7 +27,6 @@ function EmployerHome(props) {
     function handleSubmit(event) {
         event.preventDefault();
         console.log(search)
-        
     }
 
     // Function to get data from API
