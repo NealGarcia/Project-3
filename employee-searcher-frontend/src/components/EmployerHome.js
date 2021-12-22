@@ -24,6 +24,7 @@ function EmployerHome(props) {
             [event.target.name]: value
         })
     }
+
     function handleSubmit(event) {
         event.preventDefault();
         console.log(search)
@@ -31,7 +32,7 @@ function EmployerHome(props) {
 
     // Function to get data from API
       useEffect(() => {
-        const url = `http://localhost:8000/api/search/?name=${search.name}&age=${search.age}&location=&state=${search.state}&city=${search.city}&rating=${search.rating}`
+        const url = `http://localhost:8000/api/search/?name=${search.name}&age=${search.age}&location=&state=${search.state}&city=${search.city}&rating=${search.rating}&pay=${search.pay}`
         fetch(url)
           .then((res) => res.json())
           .then((json) => {
@@ -39,7 +40,6 @@ function EmployerHome(props) {
           })
           .catch(console.error);
       }, [search]);
-  
       
     return (
         <div className="component employer-splash">
