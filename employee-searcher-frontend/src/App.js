@@ -20,7 +20,7 @@ function App() {
       <Route path="/search" 
         exact component={EmployerHome}
         />
-      <Route path="/details/:name" component={Details} />
+      <Route path="/details/:_id" component={Details} />
       <Footer />
     </div>
   );

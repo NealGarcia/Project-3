@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 
 
 function Details(props) {
-    const [data, setData] = useState([
+    const [data, setData] = useState(
         { 
             location: {
                 city: "",
@@ -39,8 +39,8 @@ function Details(props) {
             openForWork: true,
             rating: 5,
             }
-    ]);
-    const url = `http://localhost:8000/api/search/?name=${props.match.params.name}`
+    );
+    const url = `http://localhost:8000/api/employee/${props.match.params._id}`
     console.log(url)
 
     // Function to get data from API
@@ -57,21 +57,21 @@ function Details(props) {
     useEffect(() => {
         getData()
     }, [])
-    console.log(data[0].name)
-    console.log(data[0].img)
+    console.log(data.name)
+    console.log(data.img)
 
     return (
         <section className = "detailsContainer">
             <h3>Employee Profile</h3>
-            <p className = "profileName">{data[0].name}, {data[0].age}</p>
-            <p className = "profileLocation">{data[0].location.city}, {data[0].location.state}</p>
+            <p className = "profileName">{data.name}, {data.age}</p>
+            <p className = "profileLocation">{data.location.city}, {data.location.state}</p>
             <img className = "profileImage"
-                src= {data[0].img.url}
-                alt={data[0].title}
+                src= {data.img.url}
+                alt={data.title}
              />
-            <p className = "jobTitle">{data[0].workHistory[0].title}</p>
-            <p className = "company">{data[0].workHistory[0].company}</p>
-            <p className = "availability">{data[0].availability.mon}</p>
+            <p className = "jobTitle">{data.workHistory.title}</p>
+            <p className = "company">{data.workHistory.company}</p>
+            <p className = "availability">{data.availability.mon}</p>
 
         </section>
     );

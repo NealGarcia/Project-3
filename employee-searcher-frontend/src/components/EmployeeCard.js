@@ -10,7 +10,7 @@ function EmployeeCard(props) {
   return (
       <Link to ={
           {
-            pathname: `/details/${props.employee.name}`,
+            pathname: `/details/${props.employee._id}`,
             state: search
           }
       } className="card-link">
