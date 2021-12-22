@@ -60,19 +60,47 @@ function Details(props) {
     console.log(data.name)
     console.log(data.img)
 
+    console.log(data.availability.mon)
+
+  const daysArr = [
+        data.availability.mon ? "Monday" : "no",
+        data.availability.tue ? "Tuesday" : "no", 
+        data.availability.wed ? "Wednesday" : "no",
+        data.availability.thu ? "Thursday" : "no",
+        data.availability.fri ? "Friday" : "no", 
+        data.availability.sat ? "Saturday" : "no",
+        data.availability.sun ? "Sunday" : "no"
+]
+   const availableDays = daysArr.filter(i => i !== "no")
+
+   const jobs = data.workHistory.map(job => <p className = "jobTitle">{job.title} at {job.company}</p>)
+
     return (
         <section className = "detailsContainer">
-            <h3>Employee Profile</h3>
+            <h2>Employee Profile</h2>
+            <div className="profile">
+            <div className="availableDays">
+                <h3>Available to work:</h3>
+            {availableDays.map((day) => <p>{day}</p>)}
+            </div>
+            <div>
             <p className = "profileName">{data.name}, {data.age}</p>
             <p className = "profileLocation">{data.location.city}, {data.location.state}</p>
             <img className = "profileImage"
                 src= {data.img.url}
                 alt={data.title}
              />
-            <p className = "jobTitle">{data.workHistory.title}</p>
-            <p className = "company">{data.workHistory.company}</p>
-            <p className = "availability">{data.availability.mon}</p>
-
+            <p>{data.contact.phone}</p>
+            <p>{data.contact.email}</p>
+            </div>
+            <div className="skills">
+            <h3>Work Experience:</h3>
+            {jobs}
+            <h3>Skills:</h3>
+            {data.skills.map(skill => <p>{skill}</p>)}
+            </div>
+            </div>
+    
         </section>
     );
 }

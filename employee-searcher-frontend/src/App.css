@@ -44,6 +44,9 @@
 .employer-splash{
   min-height: 85vh;
 }
+.detailsContainer{
+  min-height: 86vh;
+}
 .result{
   min-width: 76vw;
   min-height: 80vh;
@@ -74,7 +77,11 @@ img {
  display: flex;
  flex-direction: row;
 }
-
+.profile{
+display: flex;
+flex-direction: row;
+justify-content:space-around;
+}
 /* ---------- New / Update Employee Component Start Styling --------- */
 .formContainer{
   margin: auto;
