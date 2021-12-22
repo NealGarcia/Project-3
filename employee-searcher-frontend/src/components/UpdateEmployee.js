@@ -26,7 +26,9 @@ console.log(props.match.params.user)
   }
   function handleSubmit(e) {
     e.preventDefault();
-    call(`http://localhost:8000/api/employee/${props.match.params.user}`, updateEmployee).then((emp) =>
+    const url = `http://localhost:8000/api/employee/${props.match.params.user}`
+    console.log(url)
+    call(url, updateEmployee).then((emp) =>
       console.log(emp)
     );
   }
@@ -44,7 +46,7 @@ console.log(props.match.params.user)
           <h2>Update Your Profile</h2>
           <h3>Personal Information</h3>
           <div className="form-group">
-            <input value={updateEmployee.name} placeholder="Name:" className="input-control" onChange={handleChange}/>
+            <input id="name" value={updateEmployee.name} placeholder="Name:" className="input-control" onChange={handleChange}/>
             <input placeholder="Age:" className="input-control" />
           </div>
 
