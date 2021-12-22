@@ -73,7 +73,7 @@ function Details(props) {
 ]
    const availableDays = daysArr.filter(i => i !== "no")
 
-   const jobs = data.workHistory.map(job => <p className = "jobTitle">{job.title} at {job.company}</p>)
+   const jobs = (data.workHistory ? data.workHistory.map(job => <p className = "jobTitle">{job.title} at {job.company}</p>) : null)
 
     return (
         <section className = "detailsContainer">
@@ -85,19 +85,19 @@ function Details(props) {
             </div>
             <div>
             <p className = "profileName">{data.name}, {data.age}</p>
-            <p className = "profileLocation">{data.location.city}, {data.location.state}</p>
+            <p className = "profileLocation">{data.location.city ? data.location.city : null}, {data.location.state ? data.location.state : null}</p>
             <img className = "profileImage"
                 src= {data.img.url}
-                alt={data.title}
+                alt={data.title ? data.title : null}
              />
-            <p>{data.contact.phone}</p>
-            <p>{data.contact.email}</p>
+            <p>{data.contact.phone ? data.contact.phone : null}</p>
+            <p>{data.contact.email ? data.contact.email : null}</p>
             </div>
             <div className="skills">
             <h3>Work Experience:</h3>
             {jobs}
             <h3>Skills:</h3>
-            {data.skills.map(skill => <p>{skill}</p>)}
+            {data.skills ? data.skills.map(skill => <p>{skill}</p>) : null}
             </div>
             </div>
     
