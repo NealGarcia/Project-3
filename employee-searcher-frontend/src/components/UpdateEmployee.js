@@ -4,6 +4,9 @@ import { useState } from "react";
 import { useEffect } from "react/cjs/react.development";
 
 function UpdateEmployee(props) {
+  const statesArr = ["AL", "AK", "AZ", "AR", "CA", "CZ", "CO", "CT", "DE", "CD", "FL", "GA", "GU", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "PR", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VI", "VA", "WA", "WV", "WI", "WY"]
+  const stateList = statesArr.map(state => <option value = {state} />)
+
   const [updateEmployee, setUpdateEmployee] = useState(props.employee)
 const url = `http://localhost:8000/api/employee/${props.user}`
 console.log(props.user)
@@ -65,7 +68,9 @@ console.log(props.user)
 
           <div className="form-group">
 
+
             <input id="url" placeholder="Profile Image URL:" className="input-control"onChange={handleChangeImg}></input>
+
           </div>
 
           <div className="form-group">
@@ -74,7 +79,10 @@ console.log(props.user)
 
           <div className="form-group">
             <input onChange={handleChangeOther} id="city" placeholder="City" className="input-control" />
-            <input onChange={handleChangeOther} id="state" className="input-control" placeholder="State" />
+            <input onChange={handleChangeOther} list ="states" id="state" className="input-control" placeholder="State" />
+            <datalist id="states">
+                {stateList}
+            </datalist>
             <input onChange={handleChangeOther} id="zip" className="input-control" placeholder="ZIP" />
           </div>
 

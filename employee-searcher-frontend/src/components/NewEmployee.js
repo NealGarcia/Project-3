@@ -4,6 +4,9 @@ import React from "react";
 import Modal from 'react-modal' // npm install react-modal to use
 
 function NewEmployee(props) {
+    const statesArr = ["AL", "AK", "AZ", "AR", "CA", "CZ", "CO", "CT", "DE", "CD", "FL", "GA", "GU", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "PR", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VI", "VA", "WA", "WV", "WI", "WY"]
+    const stateList = statesArr.map(state => <option value = {state} />)
+
   const [newEmployee, setNewEmployee] = useState({});
   const [modalIsOpen, setIsOpen] = useState(false);
 
@@ -43,6 +46,7 @@ function NewEmployee(props) {
       console.log(emp)
     );
   }
+  
   return (
     <div className="component" id="formPage">
       <div className="formContainer">
@@ -92,7 +96,17 @@ function NewEmployee(props) {
             <input
               className="input-control"
               placeholder="State"
+              list="states"
               id="state"
+              onChange={handleChange}
+            />
+             <datalist id="states">
+                  {stateList}
+            </datalist>
+            <input
+              className="input-control"
+              placeholder="ZIP"
+              id="zip"
               onChange={handleChange}
             />
           </div>
