@@ -7,44 +7,46 @@ function UpdateEmployee(props) {
   const statesArr = ["AL", "AK", "AZ", "AR", "CA", "CZ", "CO", "CT", "DE", "CD", "FL", "GA", "GU", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "PR", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VI", "VA", "WA", "WV", "WI", "WY"]
   const stateList = statesArr.map(state => <option value = {state} />)
 
-  const [updateEmployee, setUpdateEmployee] = useState(props.employee)
 const url = `http://localhost:8000/api/employee/${props.user}`
 console.log(props.user)
 
- async function call(url = ``, data = {}) {
+ async function call(url, data = {}) {
     const options = {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
       mode: "cors",
     };
-    const Employee = await fetch(url, options)
+    await fetch(url, options)
       .then((res) => res.json())
       .then((json) => {
-        setUpdateEmployee(json);
+        props.setEmployee(json);
       })
-      .then(console.log("Success:", updateEmployee));
+      .then(console.log("Success:", props.employee.img, url));
     
   }
- 
+ console.log("whole employee:", props.employee)
+ let image = props.employee.img
+ console.log("image:", image)
   function handleSubmit(e) {
     e.preventDefault();
     console.log(url)
-    call(url, updateEmployee).then(console.log(updateEmployee));
+    call(url, props.employee).then(console.log(props.employee));
   }
   function handleChangeGeneral(e) {
-    setUpdateEmployee({ ...updateEmployee, [e.target.id]: e.target.value });
+    props.setEmployee({ ...props.employee, [e.target.id]: e.target.value });
     console.log(e.target.id)
   }
   function handleChangeImg(e) {
-    setUpdateEmployee({img:{ ...updateEmployee.img, [e.target.id]: e.target.value }});
+    props.setEmployee({...props.employee,  img: { ...props.employee.img, [e.target.id]: e.target.value  }})
+    // props.setEmployee({...props.employee.img, [e.target.id]: e.target.value });
     console.log("key:", e.target.id)
     console.log("value:", e.target.value)
-    console.log("object:", updateEmployee.img)
+    console.log("object(whole employee):", props.employee)
 
   }
   function handleChangeOther(e) {
-    setUpdateEmployee({ ...updateEmployee.x, [e.target.id]: e.target.value });
+    props.setEmployee({ ...props.employee.x, [e.target.id]: e.target.value });
     console.log(e.target.id)
   }
 
@@ -62,7 +64,7 @@ console.log(props.user)
           <h2>Update Your Profile</h2>
           <h3>Personal Information</h3>
           <div className="form-group">
-            <input id="name" value={updateEmployee.name} placeholder="Name:" className="input-control" onChange={handleChangeGeneral}/>
+            <input id="name" value={props.employee.name} placeholder="Name:" className="input-control" onChange={handleChangeGeneral}/>
             <input onChange={handleChangeGeneral} id="age" placeholder="Age:" className="input-control" />
           </div>
 

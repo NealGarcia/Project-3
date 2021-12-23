@@ -16,7 +16,7 @@ console.log(props.match.params.user)
         console.log(employee)
     return (
         <div>
-            {(employee !=={})?<UpdateEmployee user={props.match.params.user} employee={employee} setEmployee={setEmployee}/>:null}
+            {(employee!=={})?<UpdateEmployee user={props.match.params.user} employee={employee} setEmployee={setEmployee}/>:null}
         </div>
     );
 }
