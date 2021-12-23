@@ -19,7 +19,7 @@ function NewEmployee(props) {
     setIsOpen(false);
   }
 
-  async function call(url = "", data = {}) {
+  async function call(url, data = {}) {
     const options = {
       method: "Post",
       headers: { "Content-Type": "application/json" },
