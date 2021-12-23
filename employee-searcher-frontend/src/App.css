@@ -46,7 +46,10 @@
 #formPage{
   min-height: 81vh;
   display: flex;
-
+}
+.formpage{
+  min-height: 81vh;
+  display: flex;
 }
 .employer-splash{
   min-height: 85vh;

@@ -53,7 +53,7 @@ console.log(props.user)
   }
 
   return (
-    <div className="component">
+    <div className="component formpage">
       <div className="formContainer">
         <form className="updateEmployeeForm" onSubmit={handleSubmit}>
         <Link to={`/new`} id="return">
