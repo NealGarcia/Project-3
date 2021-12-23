@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 
 function InitializerUpdateEmp(props) {
     const [employee, setEmployee] = useState({});
+    const [availability, setAvailability] = useState({})
 console.log(props.match.params.user)
     const url = `http://localhost:8000/api/employee/${props.match.params.user}`
     useEffect(()=>{
@@ -11,12 +12,13 @@ console.log(props.match.params.user)
         .then((res)=>res.json())
         .then(json=>{
           setEmployee(json)
+          setAvailability(json.availability)
         })
         },[])
-        console.log(employee)
+        console.log("employee in initializer:", employee, availability)
     return (
         <div>
-            {(employee!=={})?<UpdateEmployee user={props.match.params.user} employee={employee} setEmployee={setEmployee}/>:null}
+            {(employee!=={})?<UpdateEmployee user={props.match.params.user} employee={employee} availability={availability} setEmployee={setEmployee}/>:null}
         </div>
     );
 }

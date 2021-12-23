@@ -4,6 +4,13 @@ import { useState } from "react";
 import { useEffect } from "react/cjs/react.development";
 
 function UpdateEmployee(props) {
+  console.log(props.availability.mon)
+  // function currentCheckVal(e){
+  //    e.target.value=e.target.checked
+  //   //  console.log(e.target.value)
+  // }
+  // console.log(props.employee.availability.mon)
+  // const [yesChecked, setYesChecked] = useState(this.props.employee.availability)
   const statesArr = [
     "AL",
     "AK",
@@ -78,11 +85,9 @@ function UpdateEmployee(props) {
       .then((json) => {
         props.setEmployee(json);
       })
-      .then(console.log("Success:", props.employee.img, url));
+      // .then(console.log("Success:", props.employee.img, url));
   }
   console.log("whole employee:", props.employee);
-  let image = props.employee.img;
-  console.log("image:", image);
   function handleSubmit(e) {
     e.preventDefault();
     console.log(url);
@@ -131,11 +136,10 @@ function UpdateEmployee(props) {
   function handleChangeAvailability(e) {
     props.setEmployee({
       ...props.employee,
-      availability: { ...props.employee.availability, [e.target.id]: e.target.value },
+      availability: { ...props.employee.availability, [e.target.id]: e.target.checked },
     });
     console.log("key:", e.target.id);
     console.log("value:", e.target.value);
-    console.log("object(whole employee):", props.employee);
   }
   // function handleChangeFormula(e) {
   //   props.setEmployee({
@@ -243,6 +247,7 @@ function UpdateEmployee(props) {
               type="checkbox"
               id="mon"
               name="mon"
+              
             />
 
             <label htmlFor="tues">Tues.</label>
@@ -289,6 +294,7 @@ function UpdateEmployee(props) {
             <input
               onChange={handleChangeAvailability}
               type="checkbox"
+              value="true"
               id="sun"
               name="sun"
             />
