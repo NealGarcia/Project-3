@@ -45,6 +45,11 @@ console.log(props.user)
     console.log(e.target.id)
   }
 
+  function handleDelete(){
+    fetch(url, { method: 'DELETE' })
+  }
+
+
   return (
     <div className="component">
       <div className="formContainer">
@@ -113,7 +118,9 @@ console.log(props.user)
           <div className="checkboxes">
             <button className = "hideButton">Hide Profile</button>
             <button className = "updateButton">Update</button>
-            <button className = "deleteButton">Delete Profile</button>
+            <Link to={"/search"}>
+              <button className = "deleteButton" onClick = {handleDelete}>Delete Profile</button>
+            </Link>
           </div>
         </form>
       </div>
