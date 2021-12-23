@@ -56,7 +56,7 @@ console.log(props.user)
     <div className="component">
       <div className="formContainer">
         <form className="updateEmployeeForm" onSubmit={handleSubmit}>
-        <Link to={`/update/${updateEmployee._id}`} id="return">
+        <Link to={`/new`} id="return">
           <p className="return">Go Back</p>
         </Link>
           <h2>Update Your Profile</h2>
