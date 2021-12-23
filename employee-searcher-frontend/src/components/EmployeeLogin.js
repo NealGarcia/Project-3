@@ -16,7 +16,7 @@ function EmployeeLogin(props) {
   }
   return (
     <div>
-      <h3>add your unique ID here!</h3>
+      <h3>Enter your unique ID here!</h3>
       <input placeholder="id here" onChange={handleChange}></input>
       <Link to={`/update/${user}`}>
         <button onSubmit={handleSubmit}>Find my profile!</button>
