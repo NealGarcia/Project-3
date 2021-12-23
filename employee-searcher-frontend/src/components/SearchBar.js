@@ -31,7 +31,8 @@ function SearchBar({ handleSubmit, handleChange, search }) {
                     name = "city"
                     value = {search.city}
                  />
-                   <input type = "text" list="states" onChange = {handleChange} name="state" placeholder = "State" />
+
+                   <input placeholder="State" type = "text" list="states" onChange = {handleChange} name="state" />
                      <datalist id="states">
                         {stateList}
                      </datalist>
