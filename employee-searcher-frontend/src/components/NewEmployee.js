@@ -40,6 +40,11 @@ function NewEmployee(props) {
     console.log(newEmployee);
   }
 
+  function handleChangeImg(e) {
+    setNewEmployee({img:{ ...newEmployee.img, [e.target.id]: e.target.value }});
+    console.log(newEmployee)
+  }
+
   function handleSubmit(e) {
     e.preventDefault();
     call("http://localhost:8000/api/", newEmployee).then((emp) =>
@@ -77,13 +82,7 @@ function NewEmployee(props) {
           </div>
 
           <div className="form-group">
-            <input
-              placeholder="Profile Image URL:"
-              className="input-control"
-              name="image[url]"
-              id="url"
-              onChange={handleChange}
-            ></input>
+          <input id="url" placeholder="Profile Image URL:" className="input-control"onChange={handleChangeImg}></input>
           </div>
 
           <div className="form-group">
