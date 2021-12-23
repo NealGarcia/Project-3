@@ -49,7 +49,6 @@ console.log(props.user)
     fetch(url, { method: 'DELETE' })
   }
 
-
   return (
     <div className="component">
       <div className="formContainer">

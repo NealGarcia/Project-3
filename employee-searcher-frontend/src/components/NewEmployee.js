@@ -1,9 +1,20 @@
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { useEffect, useState } from "react";
 import React from "react";
+import Modal from 'react-modal' // npm install react-modal to use
 
 function NewEmployee(props) {
   const [newEmployee, setNewEmployee] = useState({});
+  const [modalIsOpen, setIsOpen] = useState(false);
+
+  function openModal() {
+    if (Object.keys(newEmployee).length !== 0) // If newEmployee object is not empty
+    setIsOpen(true);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
 
   async function call(url = "", data = {}) {
     const options = {
@@ -73,14 +84,6 @@ function NewEmployee(props) {
 
           <div className="form-group">
             <input
-              placeholder="Address"
-              className="input-control"
-              id="address"
-            />
-          </div>
-
-          <div className="form-group">
-            <input
               placeholder="City"
               className="input-control"
               id="city"
@@ -90,12 +93,6 @@ function NewEmployee(props) {
               className="input-control"
               placeholder="State"
               id="state"
-              onChange={handleChange}
-            />
-            <input
-              className="input-control"
-              placeholder="ZIP"
-              id="zip"
               onChange={handleChange}
             />
           </div>
@@ -193,11 +190,24 @@ function NewEmployee(props) {
             <label htmlFor="sun">Sun.</label>
           </div>
           <div className="checkboxes">
-            <button className="createButton">Create</button>
+            <button className="createButton" onClick = {openModal}>Create</button>
           </div>
         </form>
         <Link to={"/update"}>Already have a profile? Click Here!</Link>
       </div>
+
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        contentLabel="Modal"
+      >
+        <h3>Profile Created</h3>
+        <div>Your unique profile ID is: {newEmployee._id}</div>
+        <Link to = "/search"><button onClick={closeModal}>close</button></Link>
+        <Link to = {{pathname: `/update/${newEmployee.id}`}} ><button onClick={closeModal}>update your profile</button></Link>
+      </Modal>
+
+
     </div>
   );
 }

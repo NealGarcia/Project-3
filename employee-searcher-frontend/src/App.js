@@ -20,9 +20,7 @@ function App() {
       <Route path="/new" exact component={NewEmployee} />
       <Route path="/update" exact component={EmployeeLogin} />
       <Route path="/update/:user" component={InitializerUpdateEmp} />
-      <Route path="/search" 
-        exact component={EmployerHome}
-        />
+      <Route path="/search" exact component={EmployerHome}/>
       <Route path="/details/:_id" component={Details} />
       <Footer />
     </div>

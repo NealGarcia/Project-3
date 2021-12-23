@@ -58,7 +58,7 @@ function Details(props) {
         getData()
     }, [])
     console.log(data.name)
-    console.log(data.img)
+    console.log(data)
 
     console.log(data.availability.mon)
 
