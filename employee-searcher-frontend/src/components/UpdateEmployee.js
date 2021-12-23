@@ -29,10 +29,22 @@ console.log(props.user)
     console.log(url)
     call(url, updateEmployee).then(console.log(updateEmployee));
   }
-  function handleChange(e) {
+  function handleChangeGeneral(e) {
     setUpdateEmployee({ ...updateEmployee, [e.target.id]: e.target.value });
     console.log(e.target.id)
   }
+  function handleChangeImg(e) {
+    setUpdateEmployee({img:{ ...updateEmployee.img, [e.target.id]: e.target.value }});
+    console.log("key:", e.target.id)
+    console.log("value:", e.target.value)
+    console.log("object:", updateEmployee.img)
+
+  }
+  function handleChangeOther(e) {
+    setUpdateEmployee({ ...updateEmployee.x, [e.target.id]: e.target.value });
+    console.log(e.target.id)
+  }
+
   return (
     <div className="component">
       <div className="formContainer">
@@ -43,60 +55,60 @@ console.log(props.user)
           <h2>Update Your Profile</h2>
           <h3>Personal Information</h3>
           <div className="form-group">
-            <input id="name" value={updateEmployee.name} placeholder="Name:" className="input-control" onChange={handleChange}/>
-            <input onChange={handleChange} id="age" placeholder="Age:" className="input-control" />
+            <input id="name" value={updateEmployee.name} placeholder="Name:" className="input-control" onChange={handleChangeGeneral}/>
+            <input onChange={handleChangeGeneral} id="age" placeholder="Age:" className="input-control" />
           </div>
 
           <div className="form-group">
 
-            <input id="img.url" placeholder="Profile Image URL:" className="input-control"onChange={handleChange}></input>
+            <input id="url" placeholder="Profile Image URL:" className="input-control"onChange={handleChangeImg}></input>
           </div>
 
           <div className="form-group">
-            <input id="address" placeholder="Address" className="input-control" onChange={handleChange}/>
+            <input id="address" placeholder="Address" className="input-control" onChange={handleChangeOther}/>
           </div>
 
           <div className="form-group">
-            <input onChange={handleChange} id="city" placeholder="City" className="input-control" />
-            <input onChange={handleChange} id="state" className="input-control" placeholder="State" />
-            <input onChange={handleChange} id="zip" className="input-control" placeholder="ZIP" />
+            <input onChange={handleChangeOther} id="city" placeholder="City" className="input-control" />
+            <input onChange={handleChangeOther} id="state" className="input-control" placeholder="State" />
+            <input onChange={handleChangeOther} id="zip" className="input-control" placeholder="ZIP" />
           </div>
 
             <h3>Work History</h3>
             <div className="form-group">
-            <input onChange={handleChange} id="title" className="input-control" placeholder="Job Title" />
-            <input onChange={handleChange} id="company" className="input-control" placeholder="Company" />
+            <input onChange={handleChangeOther} id="title" className="input-control" placeholder="Job Title" />
+            <input onChange={handleChangeOther} id="company" className="input-control" placeholder="Company" />
           </div>
 
             <h3>Contact Info</h3>
             <div className="form-group">
-            <input onChange={handleChange} id="phone" className="input-control" placeholder="Phone Number" />
-            <input onChange={handleChange} id="email" className="input-control" placeholder="Email Address" />
+            <input onChange={handleChangeOther} id="phone" className="input-control" placeholder="Phone Number" />
+            <input onChange={handleChangeOther} id="email" className="input-control" placeholder="Email Address" />
           </div>
 
             <h3>Availability</h3>
             <p>Choose the days you are available:</p>
             <div className = "checkboxes">
                 <label htmlFor="mon">Mon.</label>
-                <input onChange={handleChange} type="checkbox" id="mon" name="mon"/>
+                <input onChange={handleChangeOther} type="checkbox" id="mon" name="mon"/>
 
                 <label htmlFor="tues">Tues.</label>
-                <input onChange={handleChange} type="checkbox" id="tue" name="tues"/>
+                <input onChange={handleChangeOther} type="checkbox" id="tue" name="tues"/>
 
                 <label htmlFor="wed">Wed.</label>
-                <input onChange={handleChange} type="checkbox" id="wed" name="wed"/>
+                <input onChange={handleChangeOther} type="checkbox" id="wed" name="wed"/>
 
                 <label htmlFor="thu">Thu.</label>
-                <input onChange={handleChange} type="checkbox" id="thu" name="thu"/>
+                <input onChange={handleChangeOther} type="checkbox" id="thu" name="thu"/>
 
                 <label htmlFor="fri">Fri.</label>
-                <input onChange={handleChange} type="checkbox" id="fri" name="fri"/>
+                <input onChange={handleChangeOther} type="checkbox" id="fri" name="fri"/>
 
                 <label htmlFor="sat">Sat.</label>
-                <input onChange={handleChange} type="checkbox" id="sat" name="sat"/>
+                <input onChange={handleChangeOther} type="checkbox" id="sat" name="sat"/>
 
                 <label htmlFor="sun">Sun.</label>
-                <input onChange={handleChange} type="checkbox" id="sun" name="sun"/>
+                <input onChange={handleChangeOther} type="checkbox" id="sun" name="sun"/>
             </div>
           <div className="checkboxes">
             <button className = "hideButton">Hide Profile</button>
