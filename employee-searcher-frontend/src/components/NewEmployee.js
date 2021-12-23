@@ -73,14 +73,6 @@ function NewEmployee(props) {
 
           <div className="form-group">
             <input
-              placeholder="Address"
-              className="input-control"
-              id="address"
-            />
-          </div>
-
-          <div className="form-group">
-            <input
               placeholder="City"
               className="input-control"
               id="city"
@@ -90,12 +82,6 @@ function NewEmployee(props) {
               className="input-control"
               placeholder="State"
               id="state"
-              onChange={handleChange}
-            />
-            <input
-              className="input-control"
-              placeholder="ZIP"
-              id="zip"
               onChange={handleChange}
             />
           </div>
