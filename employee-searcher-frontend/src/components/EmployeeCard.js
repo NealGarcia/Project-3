@@ -1,31 +1,25 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 // import { useEffect } from "react";
-import { SearchContext } from './EmployerHome'
+import { SearchContext } from "./EmployerHome";
 
 function EmployeeCard(props) {
-    // useEffect(()=>{console.log(props.employee)},[null,props.employee])
-  const search = useContext(SearchContext)
+  // useEffect(()=>{console.log(props.employee)},[null,props.employee])
 
   return (
-      <Link to ={
-          {
-            pathname: `/details/${props.employee._id}`,
-            state: search
-          }
-      } className="card-link">
-        <div className="card-image">
-          <img
-            src={props.employee.img.url}
-            alt={props.employee.img.title}
-            width="100%"
-            className="image"
-          />
-        </div>
-        <div className="card-title">
-          <h3>{props.employee.name}</h3>
-        </div>
-      </Link>
+    <Link to={`/details/${props.employee._id}`} className="card-link">
+      <div className="card-image">
+        <img
+          src={props.employee.img.url}
+          alt={props.employee.img.title}
+          width="100%"
+          className="image"
+        />
+      </div>
+      <div className="card-title">
+        <h3>{props.employee.name}</h3>
+      </div>
+    </Link>
   );
 }
 
