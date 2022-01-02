@@ -1,5 +1,5 @@
-import { Link, Redirect } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 import React from "react";
 import Modal from 'react-modal' // npm install react-modal to use
 
@@ -10,6 +10,7 @@ function NewEmployee(props) {
   const [newEmployee, setNewEmployee] = useState({});
   const [modalIsOpen, setIsOpen] = useState(false);
 
+  // Modal
   function openModal() {
     if (Object.keys(newEmployee).length !== 0) // If newEmployee object is not empty
     setIsOpen(true);
@@ -35,14 +36,37 @@ function NewEmployee(props) {
   }
   console.log(newEmployee);
 
+  // Event Listeners for form
   function handleChange(e) {
     setNewEmployee({ ...newEmployee, [e.target.id]: e.target.value });
     console.log(newEmployee);
   }
 
   function handleChangeImg(e) {
-    setNewEmployee({img:{ ...newEmployee.img, [e.target.id]: e.target.value }});
+    setNewEmployee({...newEmployee, img:{ ...newEmployee.img, [e.target.id]: e.target.value }});
     console.log(newEmployee)
+  }
+
+  function handleChangeLocation(e) {
+    setNewEmployee({...newEmployee, location:{ ...newEmployee.location, [e.target.id]: e.target.value }});
+    console.log(newEmployee)
+  }
+
+  function handleChangeWorkHistory(e) {
+    setNewEmployee({...newEmployee, workHistory:{ ...newEmployee.workHistory, [e.target.id]: e.target.value }});
+    console.log(newEmployee)
+  }
+  
+  function handleChangeContact(e) {
+    setNewEmployee({...newEmployee, contact:{ ...newEmployee.contact, [e.target.id]: e.target.value }});
+    console.log(newEmployee)
+  }
+
+  function handleChangeAvailability(e) {
+    setNewEmployee({
+      ...newEmployee,
+      availability: { ...newEmployee.availability, [e.target.id]: e.target.checked },
+    });
   }
 
   function handleSubmit(e) {
@@ -90,24 +114,18 @@ function NewEmployee(props) {
               placeholder="City"
               className="input-control"
               id="city"
-              onChange={handleChange}
+              onChange={handleChangeLocation}
             />
             <input
               className="input-control"
               placeholder="State"
               list="states"
               id="state"
-              onChange={handleChange}
+              onChange={handleChangeLocation}
             />
              <datalist id="states">
                   {stateList}
             </datalist>
-            <input
-              className="input-control"
-              placeholder="ZIP"
-              id="zip"
-              onChange={handleChange}
-            />
           </div>
 
           <h3>Work History</h3>
@@ -116,13 +134,13 @@ function NewEmployee(props) {
               className="input-control"
               placeholder="Job Title"
               id="title"
-              onChange={handleChange}
+              onChange={handleChangeWorkHistory}
             />
             <input
               className="input-control"
               placeholder="Company"
               id="company"
-              onChange={handleChange}
+              onChange={handleChangeWorkHistory}
             />
           </div>
 
@@ -132,13 +150,13 @@ function NewEmployee(props) {
               className="input-control"
               placeholder="Phone Number"
               id="phone"
-              onChange={handleChange}
+              onChange={handleChangeContact}
             />
             <input
               className="input-control"
               placeholder="Email Address"
               id="email"
-              onChange={handleChange}
+              onChange={handleChangeContact}
             />
           </div>
 
@@ -149,7 +167,7 @@ function NewEmployee(props) {
               type="checkbox"
               id="mon"
               name="mon"
-              onChange={handleChange}
+              onChange={handleChangeAvailability}
             />
             <label htmlFor="mon">Mon.</label>
 
@@ -157,7 +175,7 @@ function NewEmployee(props) {
               type="checkbox"
               id="tues"
               name="tues"
-              onChange={handleChange}
+              onChange={handleChangeAvailability}
             />
             <label htmlFor="tues">Tues.</label>
 
@@ -165,7 +183,7 @@ function NewEmployee(props) {
               type="checkbox"
               id="wed"
               name="wed"
-              onChange={handleChange}
+              onChange={handleChangeAvailability}
             />
             <label htmlFor="wed">Wed.</label>
 
@@ -173,7 +191,7 @@ function NewEmployee(props) {
               type="checkbox"
               id="thu"
               name="thu"
-              onChange={handleChange}
+              onChange={handleChangeAvailability}
             />
             <label htmlFor="thu">Thu.</label>
 
@@ -181,7 +199,7 @@ function NewEmployee(props) {
               type="checkbox"
               id="fri"
               name="fri"
-              onChange={handleChange}
+              onChange={handleChangeAvailability}
             />
             <label htmlFor="fri">Fri.</label>
 
@@ -189,7 +207,7 @@ function NewEmployee(props) {
               type="checkbox"
               id="sat"
               name="sat"
-              onChange={handleChange}
+              onChange={handleChangeAvailability}
             />
             <label htmlFor="sat">Sat.</label>
             
@@ -198,7 +216,7 @@ function NewEmployee(props) {
               type="checkbox"
               id="sun"
               name="sun"
-              onChange={handleChange}
+              onChange={handleChangeAvailability}
             />
             <label htmlFor="sun">Sun.</label>
           </div>
