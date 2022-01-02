@@ -2,28 +2,31 @@
   text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.header{
-  margin: 5px;
-  text-align: center;
-}
-
 .component {
   border:5px solid darkolivegreen;
   margin:5px;
   text-align: center;
 }
 
+/* ----Header Styles---- */
+.header{
+  display: flex;
+  margin: 5px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1{
+  margin-left: 20px;
+}
+
+.header button{
+  float: right;
+  margin-right: 20px;
+}
+/* ----End Header Styles---- */
+
+/* ----Splash Styles---- */
 #splash{
   min-height: 81vh;
   display: flex;
@@ -38,11 +41,31 @@
   border-radius: 45%;
   font-size: 25px;
 }
+
+#splash h1, h2 {
+  font-weight: lighter;
+}
+
+#splash h1{
+  font-size: 60px;
+}
+
+#splash span {
+  font-weight: bold
+}
+
+
 #buttons{
+  margin-top:40px;
   display: flex;
   width: 60%;
   justify-content: space-evenly;
 }
+#buttons span {
+  font-size: 14px;
+  font-weight: lighter;
+}
+/* ----End Splash Styles---- */
 #formPage{
   min-height: 81vh;
   display: flex;

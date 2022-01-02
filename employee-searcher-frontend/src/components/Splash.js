@@ -16,12 +16,14 @@ function Splash(props) {
   if (employeeShow === false && employerShow === false ) {
     return (
       <div className="component" id="splash">
+        <h1>Welcome to <span>Employee Finder!</span></h1>
+        <h2>Short handed at work? Or are you looking for short-term employment?</h2>
         <div id="buttons">
           <Link to={"/search"}>
-            <button onClick={handleEmployer}>Employer</button>
+            <button onClick={handleEmployer}>Employer <br/> <span>Need a worker?</span></button>
           </Link>
           <Link to={"/new"}>
-            <button onClick={handleEmployee}>Employee</button>
+            <button onClick={handleEmployee}>Employee <br/> <span>Need work?</span></button>
           </Link>
         </div>
       </div>
