@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function Details(props) {
   const [data, setData] = useState({
@@ -80,6 +81,9 @@ function Details(props) {
 
   return (
     <section className="detailsContainer">
+      <a id="cardBackButton" href="/search">
+      <h2>Go Back</h2>
+      </a>
       <h2>Employee Profile</h2>
       <div className="profile">
         <div className="availableDays">

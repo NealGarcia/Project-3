@@ -1,21 +1,27 @@
 .App {
-  text-align: center;
+margin: 0;
 }
 
+.App.component{
+  margin: 0;
+}
 .component {
-  border:5px solid darkolivegreen;
+  /* border:5px solid darkolivegreen; */
   margin:5px;
   text-align: center;
 }
 
 /* ----Header Styles---- */
 .header{
+  margin: 0;
   display: flex;
-  margin: 5px;
   justify-content: space-between;
   align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
 }
-
+.homepageButton{
+text-decoration: none;
+}
 .header h1{
   margin-left: 20px;
 }
@@ -23,6 +29,7 @@
 .header button{
   float: right;
   margin-right: 20px;
+
 }
 /* ----End Header Styles---- */
 
@@ -38,8 +45,16 @@
 #splash button{
   width: 25vw;
   height: 15vh;
+  border: solid #3dad40 2px;
   border-radius: 45%;
   font-size: 25px;
+  background-color: white;
+  min-width: 185px;
+}
+#splash button:hover{
+  background-color: #3dad40;
+  color: white;
+  border-color: black;
 }
 
 #splash h1, h2 {
@@ -60,6 +75,8 @@
   display: flex;
   width: 60%;
   justify-content: space-evenly;
+  margin-bottom: 0.83em;
+  min-height: 250px;
 }
 #buttons span {
   font-size: 14px;
@@ -115,6 +132,10 @@ display: flex;
 flex-direction: row;
 justify-content:space-around;
 }
+.idBar{
+width: 35vw;
+padding: 5px 15px;
+}
 /* ---------- New / Update Employee Component Start Styling --------- */
 .formContainer{
   margin: auto;
@@ -168,7 +189,6 @@ button {
     padding-left: 0;   
   }
 }
-
 #return {
   display: flex;
   /* float: left; */
@@ -191,4 +211,17 @@ a{
   width: 11vw;
   min-width: 155px;
   margin-top: 40px;
+}
+@media (max-width: 600px) { 
+  #buttons {
+  margin-top: 0px;
+  flex-direction: column
+}
+}
+#cardBackButton{
+  display: flex;
+  /* float: left; */
+  margin-top: -10px;
+  margin-bottom: -40px;
+  margin-left: 10px;
 }
