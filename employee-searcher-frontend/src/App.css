@@ -29,7 +29,16 @@ text-decoration: none;
 .header button{
   float: right;
   margin-right: 20px;
-
+  height: 40px;
+  border: solid #3dad40 2px;
+  border-radius: 30px;
+  font-size: 20px;
+  background-color: white;
+}
+.header button:hover{
+  background-color: #3dad40;
+  color: white;
+  border-color: black;
 }
 /* ----End Header Styles---- */
 
@@ -46,7 +55,7 @@ text-decoration: none;
   width: 25vw;
   height: 15vh;
   border: solid #3dad40 2px;
-  border-radius: 45%;
+  border-radius: 30px;
   font-size: 25px;
   background-color: white;
   min-width: 185px;
@@ -212,16 +221,28 @@ a{
   min-width: 155px;
   margin-top: 40px;
 }
-@media (max-width: 600px) { 
-  #buttons {
-  margin-top: 0px;
-  flex-direction: column
-}
-}
 #cardBackButton{
   display: flex;
   /* float: left; */
   margin-top: -10px;
   margin-bottom: -40px;
   margin-left: 10px;
+}
+
+@media (max-width: 600px) { 
+  #buttons {
+  margin-top: 0px;
+  flex-direction: column
+}
+}
+@media (max-width: 466px) { 
+  .header {
+  flex-direction: column
+}
+.header h1 {
+  margin-left: 0;
+}
+.header button {
+margin-right: 0;
+}
 }
