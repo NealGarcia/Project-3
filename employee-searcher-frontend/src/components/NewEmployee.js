@@ -71,7 +71,7 @@ function NewEmployee(props) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    call("http://localhost:8000/api/", newEmployee).then((emp) =>
+    call(`${process.env.REACT_APP_API_URL}`, newEmployee).then((emp) =>
       console.log(emp)
     );
   }

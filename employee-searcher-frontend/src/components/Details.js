@@ -36,8 +36,9 @@ function Details(props) {
     openForWork: true,
     rating: 5,
   });
-  const url = `http://localhost:8000/api/employee/${props.match.params._id}`;
-  console.log(url);
+  const url = `${process.env.REACT_APP_API_URL}employee/${props.match.params._id}`;
+  
+  console.log(url)
 
   // Function to get data from API
   const getData = () => {
