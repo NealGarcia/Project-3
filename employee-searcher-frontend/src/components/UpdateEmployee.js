@@ -70,7 +70,7 @@ function UpdateEmployee(props) {
   ];
   const stateList = statesArr.map((state) => <option value={state} />);
 
-  const url = `${process.env.REACT_APP_API_URL}${props.user}`;
+  const url = `${process.env.REACT_APP_API_URL}employee/${props.user}`;
   console.log(props.user);
 
   async function call(url, data = {}) {

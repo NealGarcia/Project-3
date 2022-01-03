@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 
 function Details(props) {
+  // State variable with useState set to empty strings
   const [data, setData] = useState({
     location: {
       city: "",
