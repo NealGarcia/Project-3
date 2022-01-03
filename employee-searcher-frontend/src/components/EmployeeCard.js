@@ -1,10 +1,7 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-// import { useEffect } from "react";
-import { SearchContext } from "./EmployerHome";
 
 function EmployeeCard(props) {
-  // useEffect(()=>{console.log(props.employee)},[null,props.employee])
 
   return (
     <Link to={`/details/${props.employee._id}`} className="card-link">

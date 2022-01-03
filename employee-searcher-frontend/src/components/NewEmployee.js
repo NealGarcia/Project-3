@@ -4,13 +4,15 @@ import React from "react";
 import Modal from 'react-modal' // npm install react-modal to use
 
 function NewEmployee(props) {
-    const statesArr = ["AL", "AK", "AZ", "AR", "CA", "CZ", "CO", "CT", "DE", "CD", "FL", "GA", "GU", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "PR", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VI", "VA", "WA", "WV", "WI", "WY"]
-    const stateList = statesArr.map(state => <option value = {state} />)
+  // array of states each mapped out for dropdown values
+  const statesArr = ["AL", "AK", "AZ", "AR", "CA", "CZ", "CO", "CT", "DE", "CD", "FL", "GA", "GU", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "PR", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VI", "VA", "WA", "WV", "WI", "WY"]
+  const stateList = statesArr.map(state => <option value = {state} />)
 
+  // State variables for newEmployee and modal
   const [newEmployee, setNewEmployee] = useState({});
   const [modalIsOpen, setIsOpen] = useState(false);
 
-  // Modal
+  // Modal event listener functions
   function openModal() {
     if (Object.keys(newEmployee).length !== 0) // If newEmployee object is not empty
     setIsOpen(true);
@@ -36,7 +38,7 @@ function NewEmployee(props) {
   }
   console.log(newEmployee);
 
-  // Event Listeners for form
+  // Event Listeners for form - use spread operator to destructure newEmployee and target individual values
   function handleChange(e) {
     setNewEmployee({ ...newEmployee, [e.target.id]: e.target.value });
     console.log(newEmployee);
