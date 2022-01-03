@@ -1,21 +1,28 @@
 .App {
-  text-align: center;
+margin: 0;
+background-color: #cfcfcf;
 }
 
+.App.component{
+  margin: 0;
+}
 .component {
-  border:5px solid darkolivegreen;
+  /* border:5px solid darkolivegreen; */
   margin:5px;
   text-align: center;
 }
 
 /* ----Header Styles---- */
 .header{
+  margin: 0;
   display: flex;
-  margin: 5px;
   justify-content: space-between;
   align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
 }
-
+.homepageButton{
+text-decoration: none;
+}
 .header h1{
   margin-left: 20px;
 }
@@ -23,9 +30,23 @@
 .header button{
   float: right;
   margin-right: 20px;
+  height: 40px;
+  border: solid #3dad40 2px;
+  border-radius: 30px;
+  font-size: 20px;
+  background-color: white;
+}
+.header button:hover{
+  background-color: #3dad40;
+  color: white;
+  border-color: black;
 }
 /* ----End Header Styles---- */
-
+.footer{
+  background-color: rgba(0, 0, 0, 0.4);
+  margin: auto 0 0 0;
+  padding: 5px; 
+}
 /* ----Splash Styles---- */
 #splash{
   min-height: 81vh;
@@ -38,8 +59,16 @@
 #splash button{
   width: 25vw;
   height: 15vh;
-  border-radius: 45%;
+  border: solid #3dad40 2px;
+  border-radius: 30px;
   font-size: 25px;
+  background-color: white;
+  min-width: 185px;
+}
+#splash button:hover{
+  background-color: #3dad40;
+  color: white;
+  border-color: black;
 }
 
 #splash h1, h2 {
@@ -60,6 +89,8 @@
   display: flex;
   width: 60%;
   justify-content: space-evenly;
+  margin-bottom: 0.83em;
+  min-height: 250px;
 }
 #buttons span {
   font-size: 14px;
@@ -103,8 +134,14 @@ img {
   width: 15vw; /* width of container */
   height: 20vw; /* height of container */
   object-fit: cover;
-  border-top-left-radius: 7%;
-  border-top-right-radius: 7%;
+  border-radius: 7%;
+  border: 3px white solid;
+}
+img:hover{
+  border-color: #3dad40;
+}
+.profileImage:hover{
+border-color: white;
 }
 .employerHome{
  display: flex;
@@ -114,6 +151,10 @@ img {
 display: flex;
 flex-direction: row;
 justify-content:space-around;
+}
+.idBar{
+width: 35vw;
+padding: 5px 15px;
 }
 /* ---------- New / Update Employee Component Start Styling --------- */
 .formContainer{
@@ -168,7 +209,6 @@ button {
     padding-left: 0;   
   }
 }
-
 #return {
   display: flex;
   /* float: left; */
@@ -191,4 +231,32 @@ a{
   width: 11vw;
   min-width: 155px;
   margin-top: 40px;
+}
+.sideBar p{
+  font-weight: bold;
+}
+#cardBackButton{
+  display: flex;
+  /* float: left; */
+  margin-top: -10px;
+  margin-bottom: -40px;
+  margin-left: 10px;
+}
+
+@media (max-width: 600px) { 
+  #buttons {
+  margin-top: 0px;
+  flex-direction: column
+}
+}
+@media (max-width: 466px) { 
+  .header {
+  flex-direction: column
+}
+.header h1 {
+  margin-left: 0;
+}
+.header button {
+margin-right: 0;
+}
 }
