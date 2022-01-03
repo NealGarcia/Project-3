@@ -6,7 +6,7 @@ function InitializerUpdateEmp(props) {
     const [employee, setEmployee] = useState({});
     const [availability, setAvailability] = useState({})
 console.log(props.match.params.user)
-    const url = `http://localhost:8000/api/employee/${props.match.params.user}`
+    const url = `${process.env.REACT_APP_API_URL}employee/${props.match.params.user}`
     useEffect(()=>{
         fetch(url)
         .then((res)=>res.json())
