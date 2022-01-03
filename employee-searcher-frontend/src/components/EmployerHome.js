@@ -30,8 +30,8 @@ function EmployerHome(props) {
 
   // Function to get data from API
   useEffect(() => {
-    const url = `${process.env.REACT_APP_API_URL}search/?name=${search.name}&age=${search.age}&location=&state=${search.state}&city=${search.city}&rating=${search.rating}&pay=${search.pay}`;
-    fetch(url)
+    const searchurl = `${process.env.REACT_APP_API_URL}search/?name=${search.name}&age=${search.age}&location=&state=${search.state}&city=${search.city}&rating=${search.rating}&pay=${search.pay}`;
+    fetch(searchurl)
       .then((res) => res.json())
       .then((json) => {
         setEmployees(json);
